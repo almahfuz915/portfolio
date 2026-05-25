@@ -279,32 +279,101 @@ header.sticky {
 .service-card h3 { font-size: 1.4rem; margin-bottom: 15px; transition: 0.5s ease; }
 
 /* --- Contact Form --- */
-.contact { padding: 100px 0; background: var(--bg-main); }
-.contact-wrap { display: flex; gap: 60px; background: var(--bg-card); padding: 50px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
-.contact-info { flex: 1; }
+.contact { 
+    padding: 100px 0; 
+    background: var(--bg-main); 
+}
 
-.info-item { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+.contact-wrap { 
+    display: flex; 
+    gap: 60px; 
+    background: var(--bg-card); 
+    padding: 50px; 
+    border-radius: 20px; 
+    border: 1px solid rgba(255,255,255,0.05); 
+}
+
+.contact-info { 
+    flex: 1; 
+    color: #fff; /* টেক্সট কালার সাদা রাখার জন্য */
+}
+
+.info-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    margin-bottom: 30px; 
+}
+
 .info-icon {
-    width: 50px; height: 50px; border-radius: 50%;
-    background: rgba(249, 0, 77, 0.1); color: var(--accent-color);
-    display: flex; justify-content: center; align-items: center;
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%;
+    background: rgba(249, 0, 77, 0.1); 
+    color: var(--accent-color);
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
     font-size: 1.2rem;
 }
 
-.contact-form { flex: 1.5; display: flex; flex-direction: column; gap: 20px; }
-.form-group { position: relative; }
-
-.contact-form input, .contact-form textarea {
-    width: 100%; padding: 18px 20px;
-    background: #1a1a1a; border: 1px solid rgba(255,255,255,0.1);
-    color: #fff; border-radius: 10px; font-family: 'Poppins', sans-serif;
-    transition: 0.3s;
+/* ফর্ম লেআউট স্টাইল */
+.contact-form { 
+    flex: 1.5; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
 }
 
-.contact-form input:focus, .contact-form textarea:focus {
-    outline: none; border-color: var(--accent-color); background: transparent;
+.form-group { 
+    position: relative; 
+    width: 100%;
+}
+
+/* ইনপুট এবং টেক্সটএরিয়া স্টাইল */
+.contact-form input, 
+.contact-form textarea {
+    width: 100%; 
+    padding: 18px 20px;
+    background: #1a1a1a; 
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff; 
+    border-radius: 10px; 
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s;
+    box-sizing: border-box; /* উইডথ পারফেক্ট রাখার জন্য */
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: none; 
+    border-color: var(--accent-color); 
+    background: transparent;
     box-shadow: 0 0 15px rgba(249, 0, 77, 0.1);
 }
+
+/* বড় ও ফুল-উইডথ সাবমিট বাটন */
+.submit-btn {
+    width: 100%;             /* বাটনটি ইনপুট বক্সের সমান বড় হবে */
+    padding: 18px 30px;      /* ওপর-নিচে সাইজ বড় করার জন্য প্যাডিং */
+    font-size: 1.1rem;       /* লেখার সাইজ বড় করা হয়েছে */
+    font-weight: 600;        /* লেখাটি মোটা করার জন্য */
+    background: var(--accent-color); /* থিমের পিংক বা মেইন কালার */
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* বাটন হোভার ইফেক্ট */
+.submit-btn:hover {
+    opacity: 0.9;            /* হালকা একটু লাইট হবে */
+    transform: translateY(-2px); /* সামান্য ওপরে উঠবে */
+    box-shadow: 0 5px 15px rgba(249, 0, 77, 0.2); /* শ্যাডো ইফেক্ট */
+}
+
 
 /* --- Footer --- */
 footer { padding: 30px 0; text-align: center; background: #0e0e0e; border-top: 1px solid rgba(255,255,255,0.05); }
