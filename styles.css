@@ -373,31 +373,58 @@ header.sticky {
     box-shadow: 0 15px 25px rgba(249, 0, 77, 0.4);
 }
 
-/* --- Keyframes for Animations --- */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* --- Modern Footer Section --- */
+footer {
+    background-color: var(--bg-card); /* থিমের সাথে মিল রেখে হালকা ডার্ক ব্যাকগ্রাউন্ড */
+    padding: 50px 0 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
 }
 
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px; /* আইকন এবং কপিরাইট টেক্সটের মাঝের দূরত্ব */
 }
 
-/* --- Responsive Media Queries (Mobile Friendly) --- */
-@media (max-width: 992px) {
-    .hero-wrap, .about-wrap, .contact-wrap { flex-direction: column; text-align: center; gap: 40px; }
-    .name-title { font-size: 3rem; }
-    .services-grid { grid-template-columns: 1fr; }
-    .section-title.left { text-align: center; }
-    .btn-group { justify-content: center; }
-    .about-image img { max-width: 400px; margin: 0 auto; }
+/* --- Social Links Container --- */
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* আইকনগুলোর পারস্পরিক দূরত্ব */
 }
 
-@media (max-width: 576px) {
-    .nav-links { display: none; } /* মোবাইলে মেনু হাইড বা হ্যামবার্গার মেনুর জন্য */
-    .stats-container { grid-template-columns: 1fr; }
-    .name-title { font-size: 2.2rem; }
-    .contact-wrap { padding: 30px 20px; }
+/* --- Individual Social Icon Style --- */
+.social-links a {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.03); /* সাধারণ অবস্থায় হালকা ব্যাকগ্রাউন্ড */
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: var(--transition); /* আপনার আগের ডিফাইন করা স্মুথ ট্রানজিশন */
+}
+
+/* --- Icon Hover Effects --- */
+.social-links a:hover {
+    background: var(--accent-gradient); /* হোভার করলে গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড হবে */
+    color: #ffffff; /* আইকনের রঙ সাদা হবে */
+    border-color: transparent;
+    transform: translateY(-5px); /* আইকনটি হালকা ওপরে উঠবে */
+    box-shadow: 0 10px 20px rgba(249, 0, 77, 0.3); /* গ্লোয়িং শ্যাডো ইফেক্ট */
+}
+
+/* --- Copyright Text Style --- */
+footer p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    font-weight: 400;
 }
