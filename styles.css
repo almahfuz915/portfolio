@@ -128,7 +128,7 @@ header.sticky {
     justify-content: space-between;
     gap: 50px;
     width: 100%;
-    animation: fadeIn 1s ease-out;
+    animation: fadeIn 1s ease-out forwards;
 }
 
 .hero-content { flex: 1; }
@@ -246,7 +246,6 @@ header.sticky {
 
 /* --- Modern Services --- */
 .services { padding: 100px 0; background: #0e0e0e; }
-/* Changed to 2 columns for 4 items */
 .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; } 
 
 .service-card {
@@ -270,7 +269,11 @@ header.sticky {
 
 .service-card:hover { transform: translateY(-10px); }
 .service-card:hover::before { height: 100%; opacity: 1; }
-.service-card:hover h3, .service-card:hover p, .service-card:hover .icon { color: #fff; }
+
+/* হোভার করলে ভেতরের সব টেক্সটের কালার সাদা হবে */
+.service-card:hover h3, 
+.service-card:hover p, 
+.service-card:hover .icon { color: #ffffff !important; }
 
 .service-card .icon {
     font-size: 3rem; color: var(--accent-color);
@@ -295,7 +298,7 @@ header.sticky {
 
 .contact-info { 
     flex: 1; 
-    color: #fff; /* টেক্সট কালার সাদা রাখার জন্য */
+    color: #fff; 
 }
 
 .info-item { 
@@ -317,7 +320,6 @@ header.sticky {
     font-size: 1.2rem;
 }
 
-/* ফর্ম লেআউট স্টাইল */
 .contact-form { 
     flex: 1.5; 
     display: flex; 
@@ -330,7 +332,6 @@ header.sticky {
     width: 100%;
 }
 
-/* ইনপুট এবং টেক্সটএরিয়া স্টাইল */
 .contact-form input, 
 .contact-form textarea {
     width: 100%; 
@@ -341,7 +342,7 @@ header.sticky {
     border-radius: 10px; 
     font-family: 'Poppins', sans-serif;
     transition: 0.3s;
-    box-sizing: border-box; /* উইডথ পারফেক্ট রাখার জন্য */
+    box-sizing: border-box; 
 }
 
 .contact-form input:focus, 
@@ -352,54 +353,51 @@ header.sticky {
     box-shadow: 0 0 15px rgba(249, 0, 77, 0.1);
 }
 
-/* বড় ও ফুল-উইডথ সাবমিট বাটন */
+/* কাটা পড়া সাবমিট বাটনটি ঠিক করা হলো */
 .submit-btn {
-    width: 100%;             /* বাটনটি ইনপুট বক্সের সমান বড় হবে */
-    padding: 18px 30px;      /* ওপর-নিচে সাইজ বড় করার জন্য প্যাডিং */
-    font-size: 1.1rem;       /* লেখার সাইজ বড় করা হয়েছে */
-    font-weight: 600;        /* লেখাটি মোটা করার জন্য */
-    background: var(--accent-color); /* থিমের পিংক বা মেইন কালার */
-    color: #ffffff;
+    width: 100%;             
+    padding: 18px 30px;      
+    font-size: 1.1rem;
+    background: var(--accent-gradient);
+    color: #fff;
     border: none;
     border-radius: 10px;
+    font-weight: 600;
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.3s ease;
+    transition: var(--transition);
+    box-shadow: 0 10px 20px rgba(249, 0, 77, 0.2);
 }
 
-/* বাটন হোভার ইফেক্ট */
 .submit-btn:hover {
-    opacity: 0.9;            /* হালকা একটু লাইট হবে */
-    transform: translateY(-2px); /* সামান্য ওপরে উঠবে */
-    box-shadow: 0 5px 15px rgba(249, 0, 77, 0.2); /* শ্যাডো ইফেক্ট */
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(249, 0, 77, 0.4);
 }
 
-
-/* --- Footer --- */
-footer { padding: 30px 0; text-align: center; background: #0e0e0e; border-top: 1px solid rgba(255,255,255,0.05); }
-
-.social-links { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
-.social-links a {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: var(--bg-card); color: var(--text-main);
-    display: flex; justify-content: center; align-items: center;
-    transition: var(--transition); border: 1px solid rgba(255,255,255,0.05);
+/* --- Keyframes for Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
-.social-links a:hover { background: var(--accent-gradient); color: #fff; transform: translateY(-5px); }
 
-/* --- Animations & Responsive --- */
-@keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0px); } }
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
 
+/* --- Responsive Media Queries (Mobile Friendly) --- */
 @media (max-width: 992px) {
-    .hero-wrap, .about-wrap, .contact-wrap { flex-direction: column; text-align: center; }
-    .section-title.left { text-align: center; }
-    .stats-container { justify-content: center; }
-    .btn-group { justify-content: center; }
-    .name-title { font-size: 3.5rem; }
-    .nav-links { display: none; }
-}
-@media (max-width: 768px) {
+    .hero-wrap, .about-wrap, .contact-wrap { flex-direction: column; text-align: center; gap: 40px; }
+    .name-title { font-size: 3rem; }
     .services-grid { grid-template-columns: 1fr; }
+    .section-title.left { text-align: center; }
+    .btn-group { justify-content: center; }
+    .about-image img { max-width: 400px; margin: 0 auto; }
+}
+
+@media (max-width: 576px) {
+    .nav-links { display: none; } /* মোবাইলে মেনু হাইড বা হ্যামবার্গার মেনুর জন্য */
     .stats-container { grid-template-columns: 1fr; }
+    .name-title { font-size: 2.2rem; }
+    .contact-wrap { padding: 30px 20px; }
 }
