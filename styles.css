@@ -375,9 +375,8 @@ header.sticky {
 
 /* --- Modern Footer Section --- */
 footer {
-    background-color: var(--bg-card); /* থিমের সাথে মিল রেখে হালকা ডার্ক ব্যাকগ্রাউন্ড */
-    padding: 50px 0 30px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: #0a0a0a; /* ইমেজের মতো একদম ডার্ক ব্যাকগ্রাউন্ড */
+    padding: 60px 0 40px 0;
     text-align: center;
 }
 
@@ -385,7 +384,7 @@ footer .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px; /* আইকন এবং কপিরাইট টেক্সটের মাঝের দূরত্ব */
+    gap: 30px; 
 }
 
 /* --- Social Links Container --- */
@@ -393,38 +392,41 @@ footer .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px; /* আইকনগুলোর পারস্পরিক দূরত্ব */
+    gap: 20px; /* আইকনগুলোর মাঝের পারফেক্ট গ্যাপ */
 }
 
-/* --- Individual Social Icon Style --- */
+/* --- Individual Social Icon Style (Hone from Image) --- */
 .social-links a {
-    width: 45px;
-    height: 45px;
-    background: rgba(255, 255, 255, 0.03); /* সাধারণ অবস্থায় হালকা ব্যাকগ্রাউন্ড */
-    color: var(--text-main);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.02); /* গ্লাস ইফেক্টের জন্য একদম হালকা ব্যাকগ্রাউন্ড */
+    color: #ffffff; /* আইকনগুলো সাদা থাকবে */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* ইমেজের মতো সূক্ষ্ম বর্ডার */
     border-radius: 50%;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-decoration: none;
-    transition: var(--transition); /* আপনার আগের ডিফাইন করা স্মুথ ট্রানজিশন */
+    backdrop-filter: blur(5px); /* হালকা ব্লার ইফেক্ট */
+    -webkit-backdrop-filter: blur(5px);
+    transition: all 0.3s ease-in-out; /* স্মুথ ট্রানজিশন */
 }
 
-/* --- Icon Hover Effects --- */
+/* --- Icon Hover Effects (Theme Gradient) --- */
 .social-links a:hover {
-    background: var(--accent-gradient); /* হোভার করলে গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড হবে */
-    color: #ffffff; /* আইকনের রঙ সাদা হবে */
+    background: var(--accent-gradient); /* হোভার করলে আপনার লাল-গোলাপী গ্রেডিয়েন্টটি আসবে */
+    color: #ffffff;
     border-color: transparent;
-    transform: translateY(-5px); /* আইকনটি হালকা ওপরে উঠবে */
-    box-shadow: 0 10px 20px rgba(249, 0, 77, 0.3); /* গ্লোয়িং শ্যাডো ইফেক্ট */
+    transform: translateY(-5px); /* মাউস নিলে আইকনটি হালকা ওপরে উঠবে */
+    box-shadow: 0 10px 20px rgba(249, 0, 77, 0.25); /* সুন্দর গ্লোয়িং শ্যাডো */
 }
 
 /* --- Copyright Text Style --- */
 footer p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
     letter-spacing: 1px;
-    font-weight: 400;
+    text-transform: uppercase; /* টেক্সট দেখতে আরও প্রিমিয়াম লাগবে */
+    margin-top: 10px;
 }
