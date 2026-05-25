@@ -142,13 +142,19 @@
                     </div>
                 </div>
                 
-            <form action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="b7ea9a49-bc1a-426d-91b8-9c42b723f849">
-  <input type="text" name="name" required>
-  <input type="email" name="email" required>
-  <textarea name="message" required></textarea>
-  <button type="submit">Submit</button>
-</form>
+      <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="b7ea9a49-bc1a-426d-91b8-9c42b723f849">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Your Email" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="Tell me about your project..." required rows="5"></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
 
             </div>
         </div>
