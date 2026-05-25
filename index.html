@@ -117,49 +117,57 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Let's Work <span class="gradient-text">Together</span></h2>
-            <div class="contact-wrap">
-                <div class="contact-info">
-                    <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Get In Touch</h3>
-                    <p style="margin-bottom: 40px;">Have a project in mind? Looking to partner or work together? Reach out through the form and I'll get back to you in the next 48 hours.</p>
-                    
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
-                        <div>
-                            <h4 style="font-size: 1rem;">Email</h4>
-                            <p style="margin:0; font-size: 0.9rem;">almahfuz915@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
-                        <div>
-                            <h4 style="font-size: 1rem;">Phone</h4>
-                            <p style="margin:0; font-size: 0.9rem;">+880 1518489918</p>
-                        </div>
+   <!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">Let's Work <span class="gradient-text">Together</span></h2>
+        
+        <div class="contact-wrap">
+            <!-- বাম পাশের কন্টাক্ট ইনফরমেশন -->
+            <div class="contact-info">
+                <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Get In Touch</h3>
+                <p style="margin-bottom: 40px;">Have a project in mind? Looking to partner or work together? Reach out through the form and I'll get back to you in the next 48 hours.</p>
+                
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <h4 style="font-size: 1rem;">Email</h4>
+                        <p style="margin:0; font-size: 0.9rem;">almahfuz915@gmail.com</p>
                     </div>
                 </div>
                 
-      <form action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="b7ea9a49-bc1a-426d-91b8-9c42b723f849">
-            <div class="form-group">
-                <input type="text" name="name" placeholder="Your Name" required autocomplete="off">
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <h4 style="font-size: 1rem;">Phone</h4>
+                        <p style="margin:0; font-size: 0.9rem;">+880 1518489918</p>
+                    </div>
+                </div>
             </div>
-            <form class="contact-form">
-            <div class="form-group">
-                <input type="text" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-                <input type="email" placeholder="Your Email" required>
-            </div>
-            <button type="submit">Send Message</button>
-        </form>
+            
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                <!-- Web3Forms Access Key -->
+                <input type="hidden" name="access_key" value="b7ea9a49-bc1a-426d-91b8-9c42b723f849">
+                
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required autocomplete="off">
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required autocomplete="off">
+                </div>
+                
+                <div class="form-group">
+                    <textarea name="message" rows="5" placeholder="Tell me about your project..." required autocomplete="off"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
 
-            </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer>
