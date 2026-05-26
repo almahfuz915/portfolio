@@ -430,31 +430,75 @@ footer p {
     text-transform: uppercase; /* টেক্সট দেখতে আরও প্রিমিয়াম লাগবে */
     margin-top: 10px;
 }
+/* ==========================================================================
+   MOBILES & TABLETS RESPONSIVE CODE (Copy from here to the very end)
+   ========================================================================== */
 @media (max-width: 768px) {
     
-    /* ১. পুরো ওয়েবসাইটের কন্টেইনার বা সেকশন ওপর-নিচে করার জন্য */
-    .container, .row, .portfolio-grid, .gallery {
+    /* ১. গ্লোবাল সেটিংস: অতিরিক্ত প্যাডিং ও ফিক্সড হাইট রিমুভ */
+    html, body {
+        overflow-x: hidden !important; /* স্ক্রিন ডানে-বামে নড়াচড়া করা বন্ধ করবে */
+        width: 100% !important;
+    }
+
+    section, div {
+        height: auto !important;       /* ফিক্সড হাইট থাকলে তা অটো হবে */
+        max-height: none !important;
+        overflow: visible !important;  /* লেখা কেটে যাওয়া সম্পূর্ণ বন্ধ করবে */
+    }
+
+    /* ২. পোর্টফোলিও কন্টেইনার (পাশাপাশি থেকে ওপর-নিচে করা) */
+    .container, .row, .portfolio-container, .portfolio-grid, .gallery, .main-content {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
+        width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        box-sizing: border-box !important;
     }
 
-    /* ২. পোর্টফোলিওর প্রতিটি আইটেম বা কার্ড মোবাইলে পুরো স্ক্রিন জুড়ে দেখাবে */
-    .portfolio-item, .card, .box, .col {
-        width: 90% !important;
+    /* ৩. পোর্টফোলিওর প্রতিটি আইটেম বা কার্ড */
+    .portfolio-item, .card, .box, .col, .project-box {
+        width: 100% !important;
+        max-width: 400px !important; /* মোবাইলে যেন খুব বেশি চওড়া না হয় */
+        margin: 15px auto !important;
+        float: none !important;
+    }
+
+    /* ৪. ABOUT ME সেকশন ঠিক করার কোড */
+    .about, #about, .about-me, .about-section, [class*="about"] {
+        padding: 40px 20px !important; /* মোবাইলের জন্য পারফেক্ট স্পেসিং */
+        text-align: center !important;  /* মোবাইলে লেখা সেন্টারে সুন্দর লাগে */
+    }
+
+    /* ৫. GET IN TOUCH (CONTACT) সেকশন ঠিক করার কোড */
+    .contact, #contact, .get-in-touch, .contact-section, [class*="contact"] {
+        padding: 40px 20px !important;
+    }
+
+    /* কন্টাক্ট ফর্ম এবং ইনপুট ফিল্ড স্ক্রিনে ফিট করা */
+    form, .form-container {
+        width: 100% !important;
         max-width: 100% !important;
-        margin: 10px auto !important;
-        float: none !important; /* যদি float ব্যবহার করে থাকেন */
     }
 
-    /* ৩. মোবাইলে লেখা যেন কেটে না যায় বা খুব বড় না দেখায় */
-    h1 { font-size: 26px !important; }
-    h2 { font-size: 22px !important; }
-    p { font-size: 16px !important; }
+    input, textarea, select, button {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important; /* বর্ডার স্ক্রিনের বাইরে যাবে vanish হবে না */
+        margin-bottom: 15px !important;
+    }
+
+    /* ৬. রেসপনসিভ টেক্সট ও ইমেজ */
+    h1 { font-size: 26px !important; line-height: 1.3 !important; }
+    h2 { font-size: 22px !important; line-height: 1.3 !important; }
+    h3 { font-size: 20px !important; }
+    p { font-size: 16px !important; line-height: 1.6 !important; }
     
-    /* ৪. ইমেজের সাইজ মোবাইলের স্ক্রিনের বাইরে যাবে না */
     img {
         width: 100% !important;
+        max-width: 100% !important;
         height: auto !important;
     }
 }
