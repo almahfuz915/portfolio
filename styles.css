@@ -430,3 +430,31 @@ footer p {
     text-transform: uppercase; /* টেক্সট দেখতে আরও প্রিমিয়াম লাগবে */
     margin-top: 10px;
 }
+@media (max-width: 768px) {
+    
+    /* ১. পুরো ওয়েবসাইটের কন্টেইনার বা সেকশন ওপর-নিচে করার জন্য */
+    .container, .row, .portfolio-grid, .gallery {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    /* ২. পোর্টফোলিওর প্রতিটি আইটেম বা কার্ড মোবাইলে পুরো স্ক্রিন জুড়ে দেখাবে */
+    .portfolio-item, .card, .box, .col {
+        width: 90% !important;
+        max-width: 100% !important;
+        margin: 10px auto !important;
+        float: none !important; /* যদি float ব্যবহার করে থাকেন */
+    }
+
+    /* ৩. মোবাইলে লেখা যেন কেটে না যায় বা খুব বড় না দেখায় */
+    h1 { font-size: 26px !important; }
+    h2 { font-size: 22px !important; }
+    p { font-size: 16px !important; }
+    
+    /* ৪. ইমেজের সাইজ মোবাইলের স্ক্রিনের বাইরে যাবে না */
+    img {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
